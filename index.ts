@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import puppeteer from "puppeteer";
 import { createObjectCsvWriter } from "csv-writer";
 import fs from "fs";
