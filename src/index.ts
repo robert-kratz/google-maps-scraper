@@ -74,7 +74,7 @@ const jsonToCsv = async (data: any) => {
 
 // Get the search query and number of pages from the command line arguments
 
-const args = process.argv.slice(3);
+const args = process.argv.slice(2);
 
 if (args.length < 1) {
   console.error(
@@ -88,6 +88,8 @@ const MAX_SCROLLS = parseInt((args[1] || 1000).toString(), 10);
 //default desktop as output directory
 const OUTPUT_DIR = args[2] || process.cwd();
 
+console.log(args[1]);
+
 if (!searchQuery) {
   console.error(chalk.red("The searchQuery must not be empty."));
   process.exit(1);
@@ -95,7 +97,10 @@ if (!searchQuery) {
 
 if (isNaN(MAX_SCROLLS) || MAX_SCROLLS < 0) {
   console.error(
-    chalk.red("The number of pages must be a positive integer. (Default: 1000)")
+    chalk.red(
+      "The number of pages must be a positive integer. (Default: 1000):",
+      MAX_SCROLLS
+    )
   );
   process.exit(1);
 }
