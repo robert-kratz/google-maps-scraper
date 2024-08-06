@@ -28,7 +28,13 @@ The following software is required to run this script:
 You can run the script by providing the search term as an argument. For example, to search for `restaurants in New York`, you can run the following command:
 
 ```bash
-npx google-maps-scraper "restaurants in New York" "/Users/robertkratz/Desktop/"
+npx google-maps-scraper "restaurants in New York"
+```
+
+Or you pass the search term as well as the output file name. In this case, 10 scroll events will be performed to load more results:
+
+```bash
+npx google-maps-scraper "restaurants in New York" 10 "User/Path/To/OutputFile.csv"
 ```
 
 This will start a search for `restaurants in New York` and save the results in a file in the current directory. The file will be named `restaurants-in-new-york.csv`.
