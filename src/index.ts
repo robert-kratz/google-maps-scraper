@@ -100,6 +100,17 @@ if (isNaN(MAX_SCROLLS) || MAX_SCROLLS < 0) {
   process.exit(1);
 }
 
+try {
+  fs.accessSync(OUTPUT_DIR, fs.constants.W_OK);
+} catch (err) {
+  console.error(
+    chalk.red(
+      `No write access to the specified output directory: ${OUTPUT_DIR}`
+    )
+  );
+  process.exit(1);
+}
+
 console.log(chalk.blue(`Searching for query: ${searchQuery}`));
 
 // Main function
