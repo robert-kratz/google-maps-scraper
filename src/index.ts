@@ -7,6 +7,11 @@ import fs from "fs";
 import ora from "ora";
 import chalk from "chalk";
 
+process.on("SIGINT", () => {
+  console.log(chalk.red("Process interrupted"));
+  process.exit();
+});
+
 /**
  * Scroll to the bottom of the page
  * @param {*} page The Puppeteer page object
@@ -171,7 +176,7 @@ console.log(chalk.blue(`Searching for query: ${searchQuery}`));
 
   do {
     spinner.text = chalk.green(
-      "Auto-scrolling to load more results (" + (count + 1) + ")"
+      "(" + count + 1 + ") Auto-scrolling to load more results"
     );
 
     await scrollToBottom(page);
@@ -277,7 +282,9 @@ console.log(chalk.blue(`Searching for query: ${searchQuery}`));
       //await new Promise((resolve) => setTimeout(resolve, 1500));
       spinner.succeed(
         chalk.green(
-          `Extracted data for ${result.name} in ${Date.now() - pageOpenStart}ms`
+          `(${i + 1}/${urls.length}) Extracted data for ${result.name} in ${
+            Date.now() - pageOpenStart
+          }ms`
         )
       );
 

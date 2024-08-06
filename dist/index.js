@@ -13,6 +13,10 @@ import { createObjectCsvWriter } from "csv-writer";
 import fs from "fs";
 import ora from "ora";
 import chalk from "chalk";
+process.on("SIGINT", () => {
+    console.log(chalk.red("Process interrupted"));
+    process.exit();
+});
 /**
  * Scroll to the bottom of the page
  * @param {*} page The Puppeteer page object
@@ -145,7 +149,7 @@ console.log(chalk.blue(`Searching for query: ${searchQuery}`));
     // Scroll to the bottom of the page to load more results
     let count = 0;
     do {
-        spinner.text = chalk.green("Auto-scrolling to load more results (" + (count + 1) + ")");
+        spinner.text = chalk.green("(" + count + 1 + ") Auto-scrolling to load more results");
         yield scrollToBottom(page);
         yield new Promise((resolve) => setTimeout(resolve, 2000));
         count++;
@@ -218,7 +222,7 @@ console.log(chalk.blue(`Searching for query: ${searchQuery}`));
             });
             data.push(Object.assign(Object.assign({}, result), { url }));
             //await new Promise((resolve) => setTimeout(resolve, 1500));
-            spinner.succeed(chalk.green(`Extracted data for ${result.name} in ${Date.now() - pageOpenStart}ms`));
+            spinner.succeed(chalk.green(`(${i + 1}/${urls.length}) Extracted data for ${result.name} in ${Date.now() - pageOpenStart}ms`));
             yield newPage.close();
         }
         catch (error) {

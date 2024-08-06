@@ -1,5 +1,7 @@
 # Google Maps Scraper
 
+**Note**: This script might break if Google changes the structure of the website. If you encounter any issues, please open an issue on the [GitHub repository](https://github.com/robert-kratz/google-maps-scraper) or create a pull request.
+
 This is a [pupeeter](https://pptr.dev/) based scraper for **Google Maps**. This script will seach for the term you provide and scrape the information from the search results. Each search will be saved in a separate file in the current directory. Due to the limitations of the Google Maps API, this script will not work for more than 120 search results.
 
 The output file will be a `csv` file with the following format:
@@ -15,6 +17,8 @@ The output file will be a `csv` file with the following format:
 - Scraping Date
 - Website
 ```
+
+**Important**: This script is for educational purposes only. Please make sure to respect the terms of service of Google Maps and do not use this script for commercial purposes.
 
 ## Prerequisite
 
