@@ -40,15 +40,11 @@ async function scrollToBottom(page: any) {
  * @param {*} data The JSON data to convert to CSV
  */
 const jsonToCsv = async (data: any) => {
-  let name = `output/${searchQuery.replace(
+  let name = `${process.cwd()}}/${searchQuery.replace(
     " ",
     "-"
   )}-${new Date().toISOString()}.csv`;
 
-  // Create the output directory if it doesn't exist, this is a npx script, use the current directory
-  if (!fs.existsSync("output")) {
-    fs.mkdirSync("output");
-  }
   const csvWriter = createObjectCsvWriter({
     path: name,
     header: [

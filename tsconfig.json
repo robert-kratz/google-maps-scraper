@@ -1,12 +1,11 @@
 {
   "compilerOptions": {
-    "module": "CommonJS",
-    "esModuleInterop": true,
-    "target": "es6",
-    "moduleResolution": "node",
+    "module": "ESNext",
+    "target": "ES6",
     "outDir": "./dist",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
     "strict": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "include": ["src/**/*"]
 }

@@ -1,6 +1,6 @@
 # Google Maps Scraper
 
-This is a [pupeeter](https://pptr.dev/) based scraper for **Google Maps**. This script will seach for the term you provide and scrape the information from the search results. Each search result will be saved in a separate file in the `output` directory. Due to the limitations of the Google Maps API, this script will not work for more than 120 search results.
+This is a [pupeeter](https://pptr.dev/) based scraper for **Google Maps**. This script will seach for the term you provide and scrape the information from the search results. Each search will be saved in a separate file in the current directory. Due to the limitations of the Google Maps API, this script will not work for more than 120 search results.
 
 The output file will be a `csv` file with the following format:
 
@@ -31,7 +31,7 @@ You can run the script by providing the search term as an argument. For example,
 npx google-maps-scraper "restaurants in New York"
 ```
 
-This will create a `output` directory with the search results. Each search result will be saved in a separate file in the `output` directory.
+This will start a search for `restaurants in New York` and save the results in a file in the current directory. The file will be named `restaurants-in-new-york.csv`.
 
 | NAME                   | TYPE                     | STAR RATING | ADDRESS                                                 | PHONE           | WEBSITE                                                                                                                                                                                                                               | SCRAPED AT               | EMAIL | CONTACTED | URL                                                                                                                                                                                                                                             |
 | ---------------------- | ------------------------ | ----------- | ------------------------------------------------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ | ----- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
