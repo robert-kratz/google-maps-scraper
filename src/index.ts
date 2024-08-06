@@ -40,10 +40,12 @@ async function scrollToBottom(page: any) {
  * @param {*} data The JSON data to convert to CSV
  */
 const jsonToCsv = async (data: any) => {
-  let name = `${process.cwd()}}/${searchQuery.replace(
-    " ",
-    "-"
-  )}-${new Date().toISOString()}.csv`;
+  let query = searchQuery.replace(/ /g, "-"); // Replace spaces with hyphens
+  let name = `${OUTPUT_DIR}/${query}-${new Date().toISOString()}.csv`;
+
+  if (!fs.existsSync(OUTPUT_DIR)) {
+    fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+  }
 
   const csvWriter = createObjectCsvWriter({
     path: name,
@@ -72,15 +74,19 @@ const jsonToCsv = async (data: any) => {
 
 // Get the search query and number of pages from the command line arguments
 
-const args = process.argv.slice(2);
+const args = process.argv.slice(3);
 
 if (args.length < 1) {
-  console.error(chalk.red('Usage: npm start -- "query" numberOfPages'));
+  console.error(
+    chalk.red('Usage: npm start -- "query" numberOfPages "outputDir"')
+  );
   process.exit(1);
 }
 
 const searchQuery = args[0];
 const MAX_SCROLLS = parseInt((args[1] || 1000).toString(), 10);
+//default desktop as output directory
+const OUTPUT_DIR = args[2] || process.cwd();
 
 if (!searchQuery) {
   console.error(chalk.red("The searchQuery must not be empty."));
