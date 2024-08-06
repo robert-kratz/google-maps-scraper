@@ -88,8 +88,6 @@ const MAX_SCROLLS = parseInt((args[1] || 1000).toString(), 10);
 //default desktop as output directory
 const OUTPUT_DIR = args[2] || process.cwd();
 
-console.log(args[1]);
-
 if (!searchQuery) {
   console.error(chalk.red("The searchQuery must not be empty."));
   process.exit(1);
