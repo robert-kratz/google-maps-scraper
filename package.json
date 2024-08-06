@@ -7,7 +7,7 @@
     "puppeteer": "^22.15.0"
   },
   "name": "google-maps-scraper",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main": "index.ts",
   "type": "module",
