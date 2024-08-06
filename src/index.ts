@@ -11,7 +11,7 @@ import chalk from "chalk";
  * Scroll to the bottom of the page
  * @param {*} page The Puppeteer page object
  */
-async function scrollToBottom(page) {
+async function scrollToBottom(page: any) {
   await page.waitForSelector(".Nv2PK");
   await page.evaluate(() => {
     const firstElement = document.querySelector(".Nv2PK");
@@ -39,7 +39,7 @@ async function scrollToBottom(page) {
  * Convert JSON data to CSV format and write it to a file
  * @param {*} data The JSON data to convert to CSV
  */
-const jsonToCsv = async (data) => {
+const jsonToCsv = async (data: any) => {
   let name = `output/${searchQuery.replace(
     " ",
     "-"
