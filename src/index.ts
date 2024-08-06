@@ -176,7 +176,7 @@ console.log(chalk.blue(`Searching for query: ${searchQuery}`));
 
   do {
     spinner.text = chalk.green(
-      "(" + count + 1 + ") Auto-scrolling to load more results"
+      "(" + (count + 1) + ") Auto-scrolling to load more results"
     );
 
     await scrollToBottom(page);

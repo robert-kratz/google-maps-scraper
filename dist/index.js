@@ -149,7 +149,7 @@ console.log(chalk.blue(`Searching for query: ${searchQuery}`));
     // Scroll to the bottom of the page to load more results
     let count = 0;
     do {
-        spinner.text = chalk.green("(" + count + 1 + ") Auto-scrolling to load more results");
+        spinner.text = chalk.green("(" + (count + 1) + ") Auto-scrolling to load more results");
         yield scrollToBottom(page);
         yield new Promise((resolve) => setTimeout(resolve, 2000));
         count++;
