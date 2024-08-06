@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "csv-writer": "^1.6.0",
+    "fs": "^0.0.1-security",
+    "ora": "^8.0.1",
+    "puppeteer": "^22.15.0"
+  },
+  "name": "google-maps-scraper",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "devDependencies": {},
+  "bin": {
+    "google-maps-scraper": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robert-kratz/google-maps-scraper.git"
+  },
+  "keywords": [],
+  "author": "Robert Julian Kratz",
+  "license": "ISC"
+}
