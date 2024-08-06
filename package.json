@@ -7,13 +7,13 @@
     "puppeteer": "^22.15.0"
   },
   "name": "google-maps-scraper",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "type": "module",
   "devDependencies": {},
   "bin": {
-    "google-maps-scraper": "./index.js"
+    "google-maps-scraper": "./index.ts"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
