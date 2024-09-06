@@ -51,7 +51,7 @@ This will start a search for `restaurants in New York` and save the results in a
 
 ## Author
 
-This tool is created by [Robert Julian Kratz](https://rjks.us). You can find the source code on [robert-kratz](https://github.com/robert-kratz).
+This tool is created by [Robert Julian Kratz](https://rjks.us). You can find the source code on my profile [robert-kratz](https://github.com/robert-kratz).
 
 ## License
 
